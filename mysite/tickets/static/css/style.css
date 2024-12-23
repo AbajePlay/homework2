@@ -1,0 +1,405 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+body{
+    font-family: "Montserrat", sans-serif;
+    background-color: black;
+    color:white
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.header{
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 900px;
+}
+.header-menu-back{
+    background-color: rgb(0, 0, 0, 0.9);
+    height: 90px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.header-nav{
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 21px;
+    padding-bottom: 29px;
+}
+.container{
+    max-width: 1170px;
+    margin: 0 auto;
+}
+.header-list{
+    display: flex;
+    list-style-type: none;
+    gap: 35px;
+}
+.header-link{
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 550;
+    display: flex;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+.header-text{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header-text-box{
+    margin-top: 200px;
+}
+
+.header-title{
+    font-weight: 600;
+    font-size: 100px;
+    line-height: 94px;
+    color: white;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+.header-title-description{
+    font-weight: 600;
+    font-size: 21px;
+    color: white;
+}
+.header-content{
+    max-width: 1170px;
+    margin: 0 auto;
+}
+.info-project-block{
+    height: 1195px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.info-project_text-box{
+    color: white;
+    width: 1018px;
+    padding-top:50px;
+    margin: 0 auto;
+}
+.title_info-project{
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 42.19px;
+    text-align: left;
+    padding-top: 65px;
+    text-align: center;
+}
+.description_info-project{
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 25.78px;
+    padding-top: 60px;
+}
+.bg-block-project{
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 764px;
+}
+.photo-block{
+    height: 1410px;
+}
+.title_photo{
+    padding-top: 80px;
+    padding-bottom: 80px;;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 42.19px;
+    text-align: center;
+}
+.box-images_photo-block{
+    display: flex;
+    justify-content: space-between;
+    width: 1018px;
+    margin: 0 auto;
+    padding-bottom: 97.65px;
+}
+
+.header-title-description-data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-weight: 400;
+    font-size: 28px;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+}
+.concert-item {
+    display: block;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.quote_photo{
+    padding-top: 2px;
+    width: 597px;
+    margin: 0 auto;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 37.5px;
+    text-align: center;
+}
+.bg-block-photo{
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 764px;
+}
+.title_reviews{
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 42.19px;
+    text-align: left;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    text-align: center;
+}
+.reviews-item{
+    height: 100px;
+    width: 700px;
+    background-color: white;
+    color:black;
+    margin:0 auto;
+    display: flex;
+    padding-top: 36px;
+    padding-left: 57px;
+    gap: 57px;
+    margin-bottom: 80px;
+    border-radius: 8px;
+}
+.author-info_reviews{
+    width: 549px;
+}
+.author-name_reviews{
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28.13px;
+    padding-bottom: 2px;
+}
+.author-content_date{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 28.13px;
+    padding-bottom: 21px;
+    color: grey;
+}
+.author-content_review{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 18.75px;
+}
+.button-reviews-box{
+    margin: 0 auto;
+    text-align: center;
+}
+.button_reviews{
+    margin-bottom: 100px;
+    width: 308px;
+    height: 67px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28.13px;
+    border-radius: 8px;
+    background-color: #5cb85c;
+    color: white;
+}
+.bg-block-reviews{
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 764px;
+}
+.line, .line-two{
+    text-align: center;
+}
+.title_buy-bilets{
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 42.19px;
+    text-align: center;
+    padding-top: 95px;
+    padding-bottom: 95px;
+    text-align: center;
+}
+.box-info_buy-bilets{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 36px;
+}
+.info_buy-bilets{
+    width: 880.38px;
+    margin: 0 auto;
+    margin-top: 72px;
+    margin-bottom: 72px;
+}
+.name-city_buy-bilets,
+.data-concert_buy-bilets{
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 29.3px;
+
+}
+.box-info-concert{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 19px;
+}
+.box-info-concert-ufa{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 140px;
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.button_buy-bilets {
+    width: 180px;
+    height: 50px;
+    background-color: #5cb85c;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 8px;
+}
+.line{
+    margin-bottom: 50px;
+}
+.line-two{
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+.bg-block-buy-bilets{
+    opacity: 90%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 764px;
+    margin-bottom: 95px;
+}
+.footer-content-block{
+    text-align: center;
+    margin-bottom: 105px;
+}
+.title_footer{
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 22.27px;
+    text-align: center;
+}
+.content_footer{
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 22.27px;
+    text-align: center;
+}
+.footer-box{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 42px;
+    padding-bottom: 42px;
+}
+.info-footer{
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.09px;
+    color: #817E7E;
+}
+.info-footer-author{
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.09px;
+    color:#FFFBFB;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.form-label {
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 8px;
+    margin-right: 10px;
+}
+.button_buy-bilets:hover {
+    background-color: #4cae4c;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.ticket-form {
+    background-color: #1f1f1f;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.ticket-form h1 {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.ticket-form .line img, .ticket-form .line-two img {
+    width: 80%;
+    max-width: 200px;
+    margin: 10px auto;
+    display: block;
+    opacity: 0.8;
+}
+.form-control {
+    width: 80%;
+    max-width: 400px;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #333;
+    background-color: #ffffff;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    outline: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-control:focus {
+    border-color: #5cb85c;
+    box-shadow: 0 4px 10px rgba(92, 184, 92, 0.3);
+}
+
+.form-control:hover {
+    border-color: #5cb85c;
+}
+.textforsuccess {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}

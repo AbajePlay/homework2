@@ -1,0 +1,108 @@
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Покупка билетов "СВИТЧ"</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header class="header-menu-back">
+        <div class="header-menu">
+            <div class="header-nav">
+                <ul class="header-list">
+                    <li class="header-item"><a class="header-link" href="{% url 'home' %}">Главная</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <section class="buy-ticket-section">
+        <div class="container">
+            <h1 class="title_buy-bilets">Выбор билета</h1>
+            <div class="line">
+                <img src="static/img/Line 5 (1).png" alt="">
+            </div>
+            <form class="ticket-form" action="" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="concert-date" class="form-label">Дата концерта</label>
+                    <select id="concert-date" name="concert-date" class="form-control">
+                        <option value="{{ date }}" selected>{{ date }}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="concert-city" class="form-label">Город</label>
+                    <select id="concert-city" name="concert-city" class="form-control">
+                        <option value="{{ city }}" selected>{{ city }}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="tickets-quantity" class="form-label">Количество билетов</label>
+                    <input type="number" id="tickets-quantity" name="tickets-quantity" class="form-control" min="1" max="10" value="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="first-name" class="form-label">Имя</label>
+                    <input type="text" id="first-name" name="first-name" class="form-control" placeholder="Введите имя" required>
+                </div>
+                <div class="form-group">
+                    <label for="last-name" class="form-label">Фамилия</label>
+                    <input type="text" id="last-name" name="last-name" class="form-control" placeholder="Введите фамилию" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Введите email" required>
+                </div>
+                <div class="form-group">
+                    <label for="promo-code" class="form-label">Промокод</label>
+                    <input type="text" id="promo-code" name="promo-code" class="form-control promo-input" placeholder="Введите промокод">
+                    <span id="promo-status" class="promo-status"></span>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="button_buy-bilets">Оплатить</button>
+                </div>
+            </form>
+            <div class="line-two">
+                <img src="{% static 'img/Line 5 (1).png' %}" alt="">
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-content-block">
+                <h3 class="title_footer">Организатор тура:</h3><br>
+                <p class="content_footer">ООО «КОНЦЕРТ»<br>Адрес: 907031, г. Москва, Западный бульвар, д.23, корп./ст.3, кв./оф. 14<br>ИНН 9000088140, ОГРН 1217700099000</p>
+                <br>
+                <p class="content_footer">Тел: +7 (465) 324-41-73<br>info@concert-svitch.ru</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    document.getElementById('promo-code').addEventListener('blur', function () {
+        const promoCode = this.value.trim();
+        const promoStatus = document.getElementById('promo-status');
+        if (promoCode) {
+            fetch(`/validate-promo-code/?code=${promoCode}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.valid) {
+                        promoStatus.textContent = '✓ Промокод применён';
+                        promoStatus.style.color = 'green';
+                        this.style.borderColor = 'green';
+                    } else {
+                        promoStatus.textContent = '✗ Промокод недействителен';
+                        promoStatus.style.color = 'red';
+                        this.style.borderColor = 'red';
+                    }
+                })
+                .catch(err => {
+                    promoStatus.textContent = 'Ошибка при проверке промокода';
+                    promoStatus.style.color = 'orange';
+                    this.style.borderColor = 'orange';
+                });
+        } else {
+            promoStatus.textContent = '';
+            this.style.borderColor = '';
+        }
+    });
+    </script>
+</body>

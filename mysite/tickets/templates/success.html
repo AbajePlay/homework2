@@ -1,0 +1,42 @@
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Успешная оплата "СВИТЧ"</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header class="header-menu-back">
+        <div class="header-menu">
+            <div class="header-nav">
+                <ul class="header-list">
+                    <li class="header-item"><a class="header-link" href="{% url 'home' %}">Главная</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <section class="buy-ticket-section">
+        <div class="container">
+            <h1 class="title_buy-bilets">Оплата успешно завершена!</h1>
+            <div class="line">
+                <img src="{% static 'img/Line 5 (1).png' %}" alt="">
+            </div>
+            <div class="ticket-form">
+                <p class="textforsuccess">Ваш билет отправлен на вашу почту. Проверьте указанный email.</p>
+            </div>
+            <div class="line-two">
+                <img src="{% static 'img/Line 5 (1).png' %}" alt="">
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-content-block">
+                <h3 class="title_footer">Организатор тура:</h3><br>
+                <p class="content_footer">ООО «КОНЦЕРТ»<br>Адрес: 907031, г. Москва, Западный бульвар, д.23, корп./ст.3, кв./оф. 14<br>ИНН 9000088140, ОГРН 1217700099000</p>
+                <br>
+                <p class="content_footer">Тел: +7 (465) 324-41-73<br>info@concert-svitch.ru</p>
+            </div>
+        </div>
+    </footer>
+</body>

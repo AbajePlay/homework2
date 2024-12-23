@@ -1,0 +1,155 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Музыкальная группа "СВИТЧ"</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <header class="header" style="background-image: url(static/img/bg-header2.jpg)">
+        <div class="header-menu-back">
+            <div class="header-menu">
+                <div class="header-nav">
+                    <ul class="header-list">
+                        <li class="header-item"><a id="about-link" class="header-link" href="#about">О ПРОЕКТЕ</a></li>
+                        <li class="header-item"><a id="photos-link" class="header-link" href="#photos">ФОТО</a></li>
+                        <li class="header-item"><a id="reviews-link" class="header-link" href="#reviews">ОТЗЫВЫ</a></li>
+                        <li class="header-item"><a id="tickets-link" class="header-link" href="#tickets">КУПИТЬ БИЛЕТ</a></li>
+                        <li class="header-item"><a id="contacts-link" class="header-link" href="#contacts">КОНТАКТЫ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="header-content">
+            <div class="header-text">
+                <div class="header-text-box">
+                    <div class="header-title-description">МУЗЫКАЛЬНАЯ ГРУППА</div>
+                    <div class="header-title">СВИТЧ</div>
+                    <div class="header-title-description">Ульяновская группа СВИТЧ с инди-рок музыкой <br>и талантливыми участниками.</div>
+                </div>
+<div class="header-text-box">
+    <div class="header-title-description-data">
+        {% for concert in concerts %}
+            <span>{{ concert.date|date:"d/m" }} {{ concert.city }}</span><br>
+        {% endfor %}
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="about">
+        <div class="info-project-block">
+            <div class="container">
+                <div class="info-project_text-box">
+                    <h1 class="title_info-project">О проекте</h1>
+                    <p class="description_info-project">
+                        Группа Свитч зародилась в Ульяновске примерно в 2020 году, когда несколько молодых музыкантов решили объединить свои силы для создания легкой, но драйвовой музыки. Изначально коллектив начинал как трибьют-группа ssshhhiiittt!, однако вскоре они нашли свой собственный голос и стали создавать оригинальные треки.<br><br>
+                        Их звучание сочетает в себе элементы инди-рока, пост-панка и альтернативного рока, создавая уникальную атмосферу, где мягкие мелодии переплетаются с энергичными ритмами. В их музыке можно услышать яркие электрические гитары, плотный бас, мощные ударные и, время от времени, необычные акценты, добавленные духовыми инструментами.<br><br>
+                        Коллектив активно выступает на локальных сценах и фестивалях, завоевывая сердца всё большего числа поклонников. Каждый концерт Инди Свитч превращается в настоящий праздник музыки, заряженный позитивом и энергией.<br><br>
+                        Дискография:<br>
+                        1. "Мечта" (2022) - дебютный сингл<br>
+                        2. "свитч!" (2023) - дебютный мини-альбом, в котором группа выпускает шесть песен с новыми звучаниями и текстовыми идеями.<br>
+                        3. "холод" (2024) - последний релиз - сингл, в котором "свитч" продолжает развивать свой узнаваемый стиль, добавляя новые мелодии и аранжировки.<br><br>
+                        Участники:<br>
+                        Андрей – Вокал, гитара <br>
+                        Тимур – Гитара<br>
+                        Михаил - Бас-гитара<br>
+                        Андрей - Барабаны<br><br>
+                        Не пропустите этот уникальный концерт в вашем городе! Будет по-настоящему жарко!
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="bg-block-project" style="background-image: url(static/img/bg-image2.jpg)"></div>
+    </section>
+    <section id="photos">
+        <div class="photo-block">
+            <div class="container">
+                <h1 class="title_photo">Фото с концертов</h1>
+                <div class="box-images_photo-block">
+                    <img src="static/img/image3.jpg" alt="фото с концертов" width="452px" height="267px" loading="lazy">
+                    <img src="static/img/image4.jpg" alt="фото с концертов" width="452px" height="267px" loading="lazy">
+                </div>
+                <div class="box-images_photo-block">
+                    <img src="static/img/image6.jpg" alt="фото с концертов" width="452px" height="267px" loading="lazy">
+                    <img src="static/img/image5.jpg" alt="фото с концертов" width="452px" height="267px" loading="lazy">
+                </div>
+                <p class="quote_photo">"<br>Андеграунд группы "СВИТЧ" — это баланс между душевностью и драйвом, где каждая песня становится источником вдохновения и радости для своих поклонников.</p>
+            </div>
+        </div>
+        <div class="bg-block-photo" style="background-image: url(static/img/bg-image3.jpg)"></div>
+    </section>
+<section id="reviews">
+    <div class="reviews-block">
+        <div class="container">
+            <h1 class="title_reviews">Отзывы зрителей о концерте</h1>
+            <div class="reviews-items-box">
+                {% for review in reviews %}
+                <div class="reviews-item">
+                    <div class="author-info_reviews">
+                        <h2 class="author-name_reviews">{{ review.name }}</h2>
+                        <p class="author-content_review">{{ review.text }}</p>
+                        <p class="author-content_date">{{ review.created_at|date:"d/m/Y" }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="button-reviews-box">
+                <a href="{% url 'leave_review' %}">
+                    <button class="button_reviews">Оставить отзыв</button>
+                </a>
+            </div>
+        </div>
+        <div class="bg-block-reviews" style="background-image: url(static/img/bg-image4.jpg)"></div>
+    </div>
+</section>
+
+<section id="tickets">
+    <div class="buy-bilets_block">
+        <div class="container">
+            <h1 class="title_buy-bilets">Музыкальная группа "СВИТЧ"<br> Ближайшие концерты</h1>
+            <div class="line">
+                <img src="static/img/Line 5 (1).png" alt="">
+            </div>
+            <div class="header-text-box1">
+                <div class="header-title-description-data">
+{% for concert in concerts %}
+    <div class="box-info_buy-bilets">
+        <div class="box-info-concert">
+            <p class="data-concert_buy-bilets">{{ concert.date|date:"d/m" }}</p>
+            <p class="data-concert_buy-bilets">—</p>
+            <p class="name-city_buy-bilets">{{ concert.city }}</p>
+            {% if concert.tickets.all %}
+                <a href="{% url 'buy_ticket' concert.tickets.first.id %}?date={{ concert.date|date:'Y-m-d' }}&city={{ concert.city }}" class="button_buy-bilets">Купить</a>
+            {% else %}
+                <p class="no-tickets">Нет доступных билетов</p>
+            {% endif %}
+        </div>
+    </div>
+{% endfor %}
+                </div>
+            </div>
+            <div class="line-two">
+                <img src="static/img/Line 5 (1).png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="bg-block-buy-bilets" style="background-image: url(static/img/bg-image5.jpg)"></div>
+</section>
+    <footer id="contacts">
+        <div class="container">
+            <div class="footer-content-block">
+                <h3 class="title_footer">Организатор тура:</h3><br>
+                <p class="content_footer">ООО «КОНЦЕРТ»<br>Адрес: 907031, г. Москва, Западный бульвар, д.23, корп./ст.3, кв./оф. 14<br>ИНН 9000088140, ОГРН 1217700099000</p>
+                <br>
+                <p class="content_footer">Тел: +7 (465) 324-41-73<br>info@concert-svitch.ru</p>
+                <br>
+                <h3 class="title_footer">Официальный сайт проекта: Музыкальная группа "СВИТЧ"</h3>
+                <p class="content_footer">https://concert-svitch.ru</p>
+            </div>
+            <div class="footer-box">
+                <a href="#"><p class="info-footer">Политика конфиденциальности</p></a>
+            </div>
+        </div>
+    </footer>
+</body>
