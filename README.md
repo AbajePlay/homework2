@@ -31,7 +31,7 @@ source venv/bin/activate  # для Linux/MacOS
 venv\Scripts\activate     # для Windows
 ```
 
-Установите Django вручную:
+Установите Django:
 ```bash
 pip install django
 ```
@@ -83,4 +83,4 @@ python manage.py createsuperuser
 ## Основные зависимости
 
 - **Django**: Фреймворк для разработки веб-приложений.
-- **SQLite**: Встроенная база данных по умолчанию.
+- **SQLite**: Встроенная база данных.
